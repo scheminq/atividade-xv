@@ -1,0 +1,29 @@
+<script>
+
+
+function getRandomInt(min, max) 
+{
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (100)) + 1;
+}
+
+var random = getRandomInt(0, 100);
+var numero = parseInt(prompt("Escolha um número entre 1 e 100:"));
+let numeroTentativas = 0;
+
+if (numero <= random)
+    {
+        alert("Escolha um valor maior");
+    }
+    else if (numero > random)
+    {
+        alert("Escolha um valor menor");
+    }
+    else 
+    {
+        alert("Acertou!");
+    }
+    document.write(random);
+
+</script>
