@@ -1,48 +1,46 @@
 <script>
-    
-    //Função para iniciar o jogo
-function iniciarJogo()
-{
+// Função para iniciar o jogo
+function iniciarJogo() {
     const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
     let numeroTentativas = 0;
 
-        function adivinharNumero()
-        {
-        const palpite = parseInt(prompt("Digite um número entre 1 e 100:"));
-            
-            if (IsNaN(palpite))
-            {
-                alert("Por favor, insira um número válido.");
-                return;
-            }
-        
-            numeroTentativas++;
+    function adivinharNumero() 
+    {
+        const palpite = +prompt("Digite um número entre 1 e 100:");
 
-            if (palpite === numeroAleatorio)
-            {
-                alert(`Parabéns! Você acertou o número em ${numeroTentativas} tentativas.`);
-                const jogarNovamente = confirm("Deseja jogar novamente?");
-                if (jogarNovamente) 
-                {
-                iniciarJogo();
-                }
-            }
-            else if (palpite > numeroAleatorio)
-            {
-                alert("Muito alto! Tente novamente com um valor mais baixo.");
-                adivinharNumero();
-            }
-            else
-            {
-                alert("Muito baixo! Tente novamente com um valor mais alto.");
-                adivinharNumero();
-            }
+        if (isNaN(palpite)) 
+        {
+            alert("Por favor, insira um número válido.");
+            return;
         }
-        
+
+        numeroTentativas++;
+
+        if (palpite === numeroAleatorio) 
+        {
+            alert(`Parabéns! Você acertou o número em ${numeroTentativas} tentativas.`);
+            const jogarNovamente = confirm("Deseja jogar novamente?");
+            if (jogarNovamente) 
+            {
+                iniciarJogo();
+            }
+        } 
+        else if (palpite > numeroAleatorio) 
+        {
+            alert("Muito alto! Tente novamente com um valor mais baixo.");
+            adivinharNumero();
+        } 
+        else 
+        {
+            alert("Muito baixo! Tente novamente com um valor mais alto.");
+            adivinharNumero();
+        }
+    }
+
     adivinharNumero();
 }
 
-//Iniciar o jogo quando a página é carregada
+// Iniciar o jogo quando a página é carregada
 iniciarJogo();
 
 </script>
